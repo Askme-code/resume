@@ -26,48 +26,86 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: MyResume
-  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-  * Updated: Jun 29 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+  .navbar-logo img {
+  height: 40px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+}
 
-<body class="index-page">
+</style><body class="index-page">
 
-  <header id="header" class="header d-flex flex-column justify-content-center">
+  <!-- Header/Nav -->
+  <header id="header" class="header d-flex align-items-center justify-content-between px-3">
 
-    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <!-- Logo on Left -->
+    <div class="navbar-logo d-flex align-items-center">
+      <img src="assets/img/logo.png" alt="Company Logo" style="height: 40px; width: auto;">
+    </div>
 
+    <!-- Mobile Toggle Button -->
+    <i class="bi bi-list header-toggle d-xl-none"></i>
+
+    <!-- Navigation Menu -->
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i><span>Portfolio</span></a></li>
-        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i><span>Services</span></a></li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li>
+        <li><a href="#hero" class="active">
+          <i class="bi bi-house"></i>
+          <span>Home</span>
+        </a></li>
+        <li><a href="#about">
+          <i class="bi bi-person"></i>
+          <span>About</span>
+        </a></li>
+        <li><a href="#resume">
+          <i class="bi bi-file-earmark-text"></i>
+          <span>Resume</span>
+        </a></li>
+        <li><a href="#portfolio">
+          <i class="bi bi-images"></i>
+          <span>Portfolio</span>
+        </a></li>
+        <li><a href="#services">
+          <i class="bi bi-hdd-stack"></i>
+          <span>Services</span>
+        </a></li>
+        <li><a href="#contact">
+          <i class="bi bi-envelope"></i>
+          <span>Contact</span>
+        </a></li>
+          <li><a href="booking.html">
+          <i class="bi bi-envelope"></i>
+          <span>Booking</span>
+        </a></li>
       </ul>
     </nav>
-
   </header>
 
+  <!-- Main content -->
   <main class="main">
 
-    <!-- Hero Section -->
+    <!-- Hero Section with sliding background -->
     <section id="hero" class="hero section light-background">
-
-      <img src="assets/img/millazi.jpg" alt="">
+      <!-- Background Slides -->
+      <div class="hero-slides">
+        <div class="hero-slide active" style="background-image: url('assets/img/bg1.jpg')"></div>
+        <div class="hero-slide" style="background-image: url('assets/img/bg5.jpg')"></div>
+        <div class="hero-slide" style="background-image: url('assets/img/bg8.jpg')"></div>
+        <div class="hero-slide" style="background-image: url('assets/img/bg7.jpg')"></div>
+      </div>
 
       <div class="container" data-aos="zoom-out">
         <div class="row justify-content-center">
           <div class="col-lg-9">
-            <h2>Milangali Kimu</h2>
-            <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer,networking">Designer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
-            <div class="social-links">
+            <h2></h2>
+            <p>
+              I'm
+              <span class="typed" id="typed" data-typed-items="Designer, Developer, Freelancer, Photographer, Networking"></span>
+            </p>
+            <div class="social-links mt-3">
               <a href="#"><i class="bi bi-twitter-x"></i></a>
               <a href="#"><i class="bi bi-facebook"></i></a>
               <a href="#"><i class="bi bi-instagram"></i></a>
@@ -76,8 +114,10 @@
           </div>
         </div>
       </div>
+    </section>
 
-    </section><!-- /Hero Section -->
+  </main>
+</body>
 
     <!-- About Section -->
     <section id="about" class="about section">
@@ -92,7 +132,7 @@
 
         <div class="row gy-4 justify-content-center">
           <div class="col-lg-4">
-            <img src="assets/img/friends.jpg" class="img-fluid" alt="">
+            <img src="assets/img/ux.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8 content">
             <h2>UI/UX Designer &amp; Web Developer.</h2>
@@ -491,6 +531,7 @@
             <h3>Networking</h3>
           </a>
           <p>We design and install reliable network infrastructures for homes, businesses, and institutions with high-quality performance.</p>
+          <a href="booking.html" class="btn btn-primary mt-2">Book</a>
         </div>
       </div><!-- End Service Item -->
 
@@ -506,6 +547,7 @@
             <h3>Electronics Sales</h3>
           </a>
           <p>We supply a wide variety of electronics, including accessories, tools, and smart devices, at affordable prices.</p>
+          <a href="booking.html" class="btn btn-primary mt-2">Book</a>
         </div>
       </div><!-- End Service Item -->
 
@@ -521,6 +563,7 @@
             <h3>Software Development</h3>
           </a>
           <p>From web to mobile apps, we create custom software solutions tailored to your specific needs and goals.</p>
+          <a href="booking.html" class="btn btn-primary mt-2">Book</a>
         </div>
       </div><!-- End Service Item -->
 
@@ -536,6 +579,7 @@
             <h3>CCTV & Internet</h3>
           </a>
           <p>We install and maintain surveillance and internet systems for homes, offices, and public spaces with 24/7 support.</p>
+          <a href="booking.html" class="btn btn-primary mt-2">Book</a>
         </div>
       </div><!-- End Service Item -->
 
@@ -551,6 +595,7 @@
             <h3>Design & Graphics</h3>
           </a>
           <p>We provide creative branding, logos, posters, and digital designs that help your business stand out.</p>
+          <a href="booking.html" class="btn btn-primary mt-2">Book</a>
         </div>
       </div><!-- End Service Item -->
 
@@ -566,6 +611,7 @@
             <h3>Computer & ICT Maintenance</h3>
           </a>
           <p>We diagnose, repair, and maintain computers and other ICT equipment to ensure maximum uptime and efficiency.</p>
+          <a href="booking.html" class="btn btn-primary mt-2">Book</a>
         </div>
       </div><!-- End Service Item -->
 
@@ -729,89 +775,86 @@
 
 </section><!-- /Testimonials Section -->
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
+  <!-- Contact Section --> 
+<section id="contact" class="contact section">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>"Feel free to reach out to us through this section if you have any questions, suggestions, or would simply like to get in touch."</p>
-      </div><!-- End Section Title -->
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Contact</h2>
+    <p>"Feel free to reach out to us through this section if you have any questions, suggestions, or would simply like to get in touch."</p>
+  </div><!-- End Section Title -->
 
-      <div class="container" data-aos="fade" data-aos-delay="100">
+  <div class="container" data-aos="fade" data-aos-delay="100">
 
-        <div class="row gy-4">
+    <div class="row gy-4">
 
-          <div class="col-lg-4">
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
-              <div>
-                <h3>Address</h3>
-                <p>Jumbi Street, Zanzibar-Dar, hs 20</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-telephone flex-shrink-0"></i>
-              <div>
-                <h3>Call Us</h3>
-                <p>+255 678 537 803</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3>Email Us</h3>
-                <p>kimumilangali@gmail.com</p>
-              </div>
-            </div><!-- End Info Item -->
-
+      <div class="col-lg-4">
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+          <i class="bi bi-geo-alt flex-shrink-0"></i>
+          <div>
+            <h3>Address</h3>
+            <p>Jumbi Street, Zanzibar-Dar, hs 20</p>
           </div>
+        </div><!-- End Info Item -->
 
-          <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+          <i class="bi bi-telephone flex-shrink-0"></i>
+          <div>
+            <h3>Call Us</h3>
+            <p>+255 678 537 803</p>
+          </div>
+        </div><!-- End Info Item -->
 
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                </div>
-
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
-        </div>
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+          <i class="bi bi-envelope flex-shrink-0"></i>
+          <div>
+            <h3>Email Us</h3>
+            <p>kimumilangali@gmail.com</p>
+          </div>
+        </div><!-- End Info Item -->
 
       </div>
 
-    </section><!-- /Contact Section -->
+      <div class="col-lg-8">
+        <form action="https://formspree.io/f/xldneegq" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+          <div class="row gy-4">
+
+            <div class="col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+            </div>
+
+            <div class="col-md-6">
+              <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+            </div>
+
+            <div class="col-md-12">
+              <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+            </div>
+
+            <div class="col-md-12">
+              <textarea name="message" class="form-control" rows="6" placeholder="Message" required></textarea>
+            </div>
+
+            <div class="col-md-12 text-center">
+              <button type="submit">Send Message</button>
+            </div>
+
+          </div>
+        </form>
+      </div><!-- End Contact Form -->
+
+    </div>
+
+  </div>
+
+</section><!-- /Contact Section -->
+
 
   </main>
 
   <footer id="footer" class="footer position-relative light-background">
     <div class="container">
-      <h3 class="sitename">Milangali kimu</h3>
+      <h3 class="sitename">Milla Tech Solutions</h3>
       <p>"Feel free to reach out to us through this section if you have any questions, suggestions, or would simply like to get in touch."
 
       </p>
@@ -824,7 +867,7 @@
       </div>
       <div class="container">
         <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Milangali Kimu</strong> <span>All Rights Reserved</span>
+          <span>Copyright</span> <strong class="px-1 sitename">Milla Tech Solutions</strong> <span>All Rights Reserved</span>
         </div>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->
@@ -856,6 +899,63 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
   <!-- Main JS File -->
+    <!-- Typed.js Initialization -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Typed.js initialization
+      const typedElement = document.querySelector("#typed");
+      if (typedElement) {
+        new Typed("#typed", {
+          strings: typedElement.getAttribute("data-typed-items").split(","),
+          typeSpeed: 100,
+          backSpeed: 50,
+          backDelay: 2000,
+          loop: true
+        });
+      }
+
+      // Background Slider
+      const slides = document.querySelectorAll('.hero-slide');
+      let currentSlide = 0;
+      
+      function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+      }
+      
+      // Change slide every 5 seconds
+      setInterval(nextSlide, 5000);
+
+      // Mobile Menu Toggle
+      const toggle = document.querySelector('.header-toggle');
+      const nav = document.querySelector('.navmenu');
+      const navLinks = document.querySelectorAll('.navmenu a');
+
+      toggle.addEventListener('click', () => {
+        nav.classList.toggle('show-menu');
+        toggle.classList.toggle('active');
+      });
+
+      // Close mobile menu when clicking a nav link
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth < 992) {
+            nav.classList.remove('show-menu');
+            toggle.classList.remove('active');
+          }
+        });
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!nav.contains(e.target) && !toggle.contains(e.target) && window.innerWidth < 992) {
+          nav.classList.remove('show-menu');
+          toggle.classList.remove('active');
+        }
+      });
+    });
+  </script>
   <script src="assets/js/main.js"></script>
 
 </body>

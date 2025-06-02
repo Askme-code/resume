@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Booking - Milangali Kimu</title>
+
+  <!-- Favicons -->
+  <link href="assets/img/faviconi.png" rel="icon" />
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Main CSS -->
+  <link href="assets/css/main.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .navbar-logo img {
+      height: 40px;
+      width: auto;
+      max-width: 150px;
+      object-fit: contain;
+    }
+
+    .form-section {
+      padding: 60px 0;
+      color: #fff;
+      position: relative;
+      background: #000;
+    }
+
+    .form-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+      animation: slideBg 30s infinite;
+      opacity: 0.6;
+      z-index: 1;
+    }
+
+    @keyframes slideBg {
+      0% { background-image: url('assets/img/bg5.jpg'); }
+      25% { background-image: url('assets/img/bg6.jpg'); }
+      50% { background-image: url('assets/img/bg7.jpg'); }
+      75% { background-image: url('assets/img/bg3.jpg'); }
+      100% { background-image: url('assets/img/bg5.jpg'); }
+    }
+
+    .form-section .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    label {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    #form-messages.success {
+      color: #0f0;
+    }
+
+    #form-messages.error {
+      color: #f00;
+    }
+
+    .scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ffc107;
+      color: #000;
+      padding: 10px;
+      border-radius: 50%;
+      z-index: 1000;
+      display: none;
+    }
+
+    .scroll-top:hover {
+      background-color: #ffcd39;
+    }
+
+    @media (max-width: 768px) {
+      .form-section {
+        padding: 40px 15px;
+      }
+
+      .navmenu ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header d-flex align-items-center justify-content-between px-3 py-2 bg-dark text-white">
+    <div class="navbar-logo">
+      <img src="assets/img/logo.png" alt="Company Logo" />
+    </div>
+    <i class="bi bi-list d-xl-none fs-2" id="mobile-toggle"></i>
+    <nav class="navmenu d-none d-md-flex">
+      <ul class="list-unstyled d-flex gap-3 mb-0">
+        <li><a href="index.html#hero" class="text-white">Home</a></li>
+        <li><a href="index.html#about" class="text-white">About</a></li>
+        <li><a href="index.html#resume" class="text-white">Resume</a></li>
+        <li><a href="index.html#portfolio" class="text-white">Portfolio</a></li>
+        <li><a href="index.html#services" class="text-white">Services</a></li>
+        <li><a href="index.html#contact" class="text-white">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Booking Form -->
+  <section class="form-section">
+    <div class="container">
+      <div class="section-title text-center mb-4">
+        <h2 class="text-white">Book an Appointment</h2>
+        <p>Fill out the form and we’ll get back to you shortly.</p>
+      </div>
+      <form id="booking-form" action="https://formspree.io/f/mwpbkkon" method="POST">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" class="form-control" required />
+          </div>
+          <div class="col-md-6">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" class="form-control" required />
+          </div>
+          <div class="col-md-6">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" class="form-control" />
+          </div>
+          <div class="col-md-6">
+            <label for="services">Choose a Service</label>
+            <select id="services" name="services" class="form-select" required>
+              <option value="">-- Select a Service --</option>
+              <option value="IoT">IoT</option>
+              <option value="Networking">Networking</option>
+              <option value="Web Design">Web Design</option>
+              <option value="VoIP">VoIP</option>
+              <option value="Electronics">Electronics</option>
+              <option value="Maintenance">Maintenance</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label for="specialRequest">Special Request</label>
+            <textarea id="specialRequest" name="specialRequest" rows="4" class="form-control" placeholder="Any additional request or info..."></textarea>
+          </div>
+          <div class="col-12 form-check text-start mt-2">
+            <input type="checkbox" class="form-check-input" id="agree" name="agree" required />
+            <label class="form-check-label" for="agree">I agree to the <a href="#" class="text-warning text-decoration-underline">terms & privacy policy</a>.</label>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-warning">Send Booking Request</button>
+        </div>
+        <div id="form-messages" class="mt-3" role="alert"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer text-center py-4 bg-dark text-white">
+    <h3 class="sitename">Milla Tech Solutions</h3>
+    <p>"Feel free to reach out to us through this section if you have any questions, suggestions, or would simply like to get in touch."</p>
+    <div class="d-flex justify-content-center gap-3 fs-5">
+      <a href="#" class="text-white"><i class="bi bi-twitter-x"></i></a>
+      <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+      <a href="#" class="text-white"><i class="bi bi-skype"></i></a>
+      <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
+    </div>
+    <div class="mt-3">
+      <p>&copy; <strong>Milla Tech Solutions</strong> | All Rights Reserved</p>
+      <p>Designed by <a href="mailto:kimumilangali@gmail.com" class="text-warning">Milangali Kimu</a></p>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center" id="scrollTop">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom Scripts -->
+  <script>
+    const form = document.getElementById('booking-form');
+    const formMessages = document.getElementById('form-messages');
+    const scrollTop = document.getElementById('scrollTop');
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navMenu = document.querySelector('.navmenu');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      formMessages.textContent = '';
+      formMessages.className = '';
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          formMessages.className = 'success';
+          formMessages.textContent = 'Thanks for your submission!';
+          form.reset();
+        } else {
+          throw new Error('Submission failed');
+        }
+      } catch (error) {
+        formMessages.className = 'error';
+        formMessages.textContent = 'Oops! Something went wrong.';
+      }
+    });
+
+    window.addEventListener('scroll', () => {
+      scrollTop.style.display = window.scrollY > 200 ? 'flex' : 'none';
+    });
+
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('d-none');
+      navMenu.classList.toggle('d-flex');
+    });
+  </script>
+</body>
+
+</html>
